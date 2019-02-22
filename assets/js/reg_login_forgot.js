@@ -111,14 +111,8 @@ $(document).ready(function(){
             method: "POST",
             dataType: 'json',
             success: function(json) {
-               console.log("here is status:"+json.status);
-               if(json.data){
-                  console.log("here is email:"+json.data.email);
-                  console.log("here is fname:"+json.data.fname);
-               }
-               if(json.status == "success"){
-                     alert('registration was a success');
-               
+               if(json.status == "success" && json.data){
+                  
                }else{
                      alert('registration failed');
                      alert(json.message);
