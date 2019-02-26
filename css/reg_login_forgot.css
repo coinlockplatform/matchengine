@@ -1,0 +1,288 @@
+.logincontainer{
+   position: relative;
+   margin:auto;
+   display: block;
+   width: 500px;
+   height: 370px;
+   z-index: 1;
+}
+
+.logincontainer h2 {
+   padding: 40px;
+   font-weight: lighter;
+   text-transform: uppercase;
+   color: #414141;
+}
+
+.logincontainer input {
+   display: block;
+   height: 50px;
+   width: 90%;
+   margin: 0 auto;
+   border: 1px solid #eee;
+}
+.logincontainer input::placeholder {
+   -webkit-transform: translateY(0px);
+   transform: translateY(0px);
+   -webkit-transition: .5s;
+   transition: .5s;
+}
+.logincontainer input:hover, .logincontainer input:focus, .logincontainer input:active:focus {
+   outline: none;
+   border-bottom: 1px solid #335cd6;
+}
+.logincontainer input:hover::placeholder, .logincontainer input:focus::placeholder, .logincontainer input:active:focus::placeholder {
+   position: relative;
+   -webkit-transform: translateY(-17px);
+   transform: translateY(-17px);
+}
+
+.email,
+.pwd {
+   position: relative;
+   z-index: 1;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+   padding-left: 20px;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: lighter;
+   -webkit-transition: .5s;
+   transition: .5s;
+}
+
+.link {
+   text-decoration: none;
+   display: inline-block;
+   margin: 27px 28%;
+   text-transform: uppercase;
+   color: #858585;
+   font-weight: lighter;
+   -webkit-transition: .5s;
+   transition: .5s;
+}
+
+.logincontainer button {
+   cursor: pointer;
+   display: inline-block;
+   float: left;
+   width: 396px;
+   height: 60px;
+   margin-left: 24px;
+   border: none;
+   font-family: 'Open Sans', sans-serif;
+   text-transform: uppercase;
+   color: #fff;
+   -webkit-transition: .5s;
+   transition: .5s;
+}
+@media screen and (max-width: 500px) {
+   .logincontainer button {
+      width: 335px;
+   }
+}
+
+.logincontainer button:nth-of-type(1) {
+   /* background: #C4D687; */
+   background: #335cd6;
+}
+.logincontainer button:nth-of-type(2) {
+   background: #335cd6;
+}
+.logincontainer button span {
+   position: absolute;
+   display: block;
+   width: 396px;
+   margin: -10px;
+   -webkit-transform: translateX(0);
+   transform: translateX(0);
+   -webkit-transition: .5s;
+   transition: .5s;
+}
+.logincontainer button:hover span {
+   -webkit-transform: translateX(20px);
+   transform: translateX(20px);
+   font-weight:bold;
+}
+.logincontainer button:hover span::after {
+   font-family: "Font Awesome 5 Free"; font-weight: 900; 
+   content: " \f101";
+}
+#register-form-cont,#forgotpass-form-cont{
+   display:none;
+}
+.termsx {
+   overflow-y: scroll;
+   height: 120px;
+   width: 90%;
+   border: 1px solid #DDD;
+   margin: 0 auto;
+   padding:5px;
+   color:#888;
+   background:#fcfcfc;
+}
+.termsx h4 {
+   font-size:150%;
+}
+.termsx strong {
+   font-size:100%
+}
+.termsx p {
+   font-size:80%
+}
+.errormsg{
+   display:block;
+   color:#f00;
+   height:0px;
+   line-height:13px;
+   margin-left:30px;
+   position:relative;
+   top:-32px;
+   z-index:1;
+   font-size:80%;
+}
+
+
+
+
+
+
+
+
+.row-centered {
+   text-align:center;
+}
+
+
+
+
+
+
+
+/* Protect/Leverage Buttons */
+.portfolioFilter {
+   text-align: center;
+   width: 100%;
+ }
+ 
+ .portfolioFilter ul {
+   display: inline-block;
+ }
+ 
+ .portfolioFilter a {
+   color: #666;
+   text-decoration: none;
+   display: inline;
+ }
+ 
+ .portfolioFilter a.current {
+   font-weight: bold;
+   background: #337AB7;
+ }
+ 
+ .sort-nav {
+   width: auto;
+   margin: 0 auto;
+   height: auto;
+   display: block;
+ }
+ 
+ .sort-nav li {
+   float: left;
+   margin-bottom: 0.2em;
+   list-style-type: none;
+ }
+ 
+ .sort-nav a {
+   padding: 3px 30px;
+   background: #ccc;
+   color: #fff;
+   display: block;
+   text-decoration: none;
+ }  
+
+
+.amountDesc{
+   text-align:left;
+   margin-bottom:5px;
+   font-size: 85%;
+}
+
+
+.pillbox{
+   display:inline-block;
+   position:relative;
+   margin:20px 5px;
+   padding:25px;
+   border:1px solid #eee;
+   border-top:1px solid #335cd6;
+   background-color:#fcfcfc;
+   text-align:left;
+}
+.pillboxHeading{
+   font-weight:bold;
+   background-color:#fafafa;;
+   color:#335cd6;
+   font-size:110%;
+   text-transform:uppercase;
+}
+.pillbox p{
+   text-align:center;
+   margin:10px;
+}
+
+
+
+
+
+
+
+.tradeContainer p:not(:last-child) {
+   margin: 0 0 10px;
+}
+div.assetDetails {
+   display: none;
+   padding: 5px 0 0;
+   border-top: 1px solid #abc;
+   margin:0px;
+}
+.tradeContainer input.radioTab {
+   display: none;
+}
+.tradeContainer label {
+   display: inline-block;
+   margin: 0 0 -1px;
+   padding: 5px 20px;
+   font-weight: 600;
+   text-align: center;
+   color: #abc;
+   border: 1px solid transparent;
+}
+.tradeContainer label:hover {
+   color: #789;
+   cursor: pointer;
+}
+.tradeContainer input:checked + label {
+   color: #0B121F;
+   border: 1px solid #abc;
+   border-top: 2px solid #0B121F;
+   border-bottom: 1px solid #fff;
+}
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+   display: block;
+}
+@media screen and (max-width: 800px) {
+   .tradeContainer label {
+       font-size: 0;
+   }
+   .tradeContainer label:before {
+       margin: 0;
+       font-size: 18px;
+   }
+}
+@media screen and (max-width: 500px) {
+   .tradeContainer label {
+       padding: 15px;
+   }
+}
