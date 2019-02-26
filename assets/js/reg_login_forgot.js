@@ -11,7 +11,8 @@ $(document).ready(function(){
    $("#login-form").submit(function(e){
       e.preventDefault(e);
       if ($("#login-form").valid()) {
-         var post_url = $("#login-form").attr("action"); //get form action url
+         //var post_url = $("#login-form").attr("action"); //get form action url
+         var post_url = "/api/vi/auth";
          var form_data = $("#login-form").serializeArray();
          form_data.push({name: "type", value: 'login'});
          $.ajax({
@@ -81,7 +82,8 @@ $(document).ready(function(){
    $("#forgotpass-form").submit(function(e){
       e.preventDefault(e);
       if ($("#forgotpass-form").valid()) {
-         var post_url = $("#forgotpass-form").attr("action"); //get form action url
+         //var post_url = $("#forgotpass-form").attr("action"); //get form action url
+         var post_url = "/api/vi/auth";
          var form_data = $("#forgotpass-form").serializeArray();
          form_data.push({name: "type", value: 'reset'});
          $.ajax({
@@ -143,7 +145,8 @@ $(document).ready(function(){
    $("#register-form").submit(function(e){
       e.preventDefault(e);
       if ($("#register-form").valid()) {
-         var post_url = $("#register-form").attr("action"); //get form action url
+         //var post_url = $("#register-form").attr("action"); //get form action url
+         var post_url = "/api/vi/registration";
          var form_data = $("#register-form").serialize();
          $.ajax({
             url: post_url,

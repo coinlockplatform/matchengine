@@ -43,7 +43,7 @@
                                     <h1 class="card-title">Sign In</h1>
                                 </div>
                                 <div class="card-body">
-                                    <form action='/api/v1/auth' method=post' id='login-form'>
+                                    <form id='login-form'>
                                         <input type="email" class="email" id='login_email' name='email' placeholder="EMAIL" required title='you need to do this'><br /><div id='login_email_e' class='errormsg'></div>
                                         <input type="password" class="pwd" id='login_password' name='password' placeholder="PASSWORD" required><br /><div id='login_password_e' class='errormsg'></div>
                                         <br/>
@@ -73,7 +73,7 @@
                                     <h1 class="card-title">Register for an Account</h1>
                                 </div>
                                 <div class="card-body">
-                                    <form action='/api/v1/registration' id='register-form' method='post'>
+                                    <form id='register-form'>
                                         <input value='test@test.com' type="email" class="email" id='reg_email' name='email' placeholder="EMAIL"><br/><div id='reg_email_e' class='errormsg'></div>
                                         <input value='bob' type="text" class="pwd" id='reg_first_name' name='fname' placeholder="FIRST NAME"><br/><div id='reg_first_name_e' class='errormsg'></div>
                                         <input value='test' type="text" class="pwd" id='reg_last_name' name='lname' placeholder="LAST NAME"><br/><div id='reg_last_name_e' class='errormsg'></div>
@@ -166,7 +166,7 @@
                                     <h1 class="card-title">Forgot Password</h1>
                                 </div>
                                 <div class="card-body">
-                                    <form action='/api/v1/auth' id='forgotpass-form' method=post'>
+                                    <form id='forgotpass-form'>
                                         <input type="email" class="email" id='forgotpass_email' name='email' placeholder="EMAIL YOU REGISTERED WITH" required><br/><div id='forgotpass_email_e' class='errormsg'></div>
                                         <br/>
                                         <button class="register" id="forgotpass-form-submit" type='submit' value='register' name="submit">
