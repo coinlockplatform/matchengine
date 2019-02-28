@@ -1,40 +1,30 @@
 
 
 
-function updateBalances(){
+global function updateBalances(){
    var post_url = "/test-balances.json";
    $.ajax({
       url: post_url,
       timeout: 5000,
-      data: form_data,
-      method: "POST",
+      method: "GET",
       dataType: 'json',
       success: function(json) {
-         if(json.status == "success" && json.data){
-               swal({
-                  title: 'Test json Balances doc recieved',
-                  text: 'just a default msg',
-                  type: 'success'
-               });
+         if(json.status == "success"){
+               consdole.log('yes');
                
                
 
          }else{
-               swal({
-                  title: 'Oops!',
-                  text: json.message,
-                  type: 'error'
-               });
+               console.log('no');
          }
       }
    });
 
 }
 updateBalances();
-setInterval(function() { updateBalances() }, 100000); 
-
 
 $(window).on('load', function(){ 
+   setInterval(function() { updateBalances() }, 1000); 
    /* Lock Left guage */
    var lockLeft_el = document.getElementById('lockLeft');
    var lockLeft_chart = echarts.init(lockLeft_el);
