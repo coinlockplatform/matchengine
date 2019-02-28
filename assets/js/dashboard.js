@@ -1,6 +1,13 @@
 
 
 
+function updateBalances(){
+
+
+}
+
+setInterval(function() { updateBalances() }, 150000); 
+
 
 $(window).on('load', function(){ 
    /* Lock Left guage */

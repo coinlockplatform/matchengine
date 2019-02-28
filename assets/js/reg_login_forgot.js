@@ -12,12 +12,12 @@ $(document).ready(function(){
       e.preventDefault(e);
       if ($("#login-form").valid()) {
          //var post_url = $("#login-form").attr("action"); //get form action url
-         var post_url = "/api/vi/auth";
+         var post_url = "/api/v1/auth";
          var form_data = $("#login-form").serializeArray();
-         form_data.push({name: "type", value: 'login'});
+         form_data.push({name: "action", value: 'login'});
          $.ajax({
             url: post_url,
-            timeout: 10000,
+            timeout: 5000,
             data: form_data,
             method: "POST",
             dataType: 'json',
@@ -26,9 +26,13 @@ $(document).ready(function(){
                      swal({
                         title: 'Login Success',
                         text: 'You will be forwarded to your dashboard now',
-                        timer:true,
                         type: 'success'
                      });
+                     
+                     setTimeout(function(){
+                        $(location).attr('href', '/dashboard.jsp');
+                     }, 1000);
+
                }else{
                      swal({
                         title: 'Oops!',
@@ -83,9 +87,9 @@ $(document).ready(function(){
       e.preventDefault(e);
       if ($("#forgotpass-form").valid()) {
          //var post_url = $("#forgotpass-form").attr("action"); //get form action url
-         var post_url = "/api/vi/auth";
+         var post_url = "/api/v1/auth";
          var form_data = $("#forgotpass-form").serializeArray();
-         form_data.push({name: "type", value: 'reset'});
+         form_data.push({name: "action", value: 'reset'});
          $.ajax({
             url: post_url,
             timeout: 10000,
@@ -146,7 +150,7 @@ $(document).ready(function(){
       e.preventDefault(e);
       if ($("#register-form").valid()) {
          //var post_url = $("#register-form").attr("action"); //get form action url
-         var post_url = "/api/vi/registration";
+         var post_url = "/api/v1/registration";
          var form_data = $("#register-form").serialize();
          $.ajax({
             url: post_url,

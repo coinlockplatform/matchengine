@@ -97,7 +97,7 @@
 														</td>
 														<td>
 															<span class="text-muted font-size-sm">12.24048303</span>
-															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>63,6379.90</div>
+															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>63,679.90</div>
 														</td>
 														<td>
 															<h6 class="text-secondary font-size-sm mb-0">1.92693450</h6>
@@ -146,8 +146,8 @@
 															</div>
 														</td>
 														<td>
-															<span class="text-muted font-size-sm">13,578,599.03482</span>
-															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>6,305.00</div>
+															<span class="text-muted font-size-sm">0</span>
+															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>0.00</div>
 														</td>
 														<td>
 															<h6 class="text-secondary font-size-sm mb-0">0</h6>
@@ -171,11 +171,11 @@
 															</div>
 														</td>
 														<td>
-															<span class="text-default font-size-sm">34.23424</span>
-															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>55.00</div>
+															<span class="text-default font-size-sm">0</span>
+															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>00.00</div>
 														</td>
 														<td>
-															<h6 class="text-secondary font-size-sm mb-0">24.0403371</h6>
+															<h6 class="text-secondary font-size-sm mb-0">0</h6>
 														</td>
 													</tr>
 
@@ -196,11 +196,11 @@
 															</div>
 														</td>
 														<td>
-															<span class="text-muted font-size-sm">137,586.3453</span>
-															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>22.50</div>
+															<span class="text-muted font-size-sm">0</span>
+															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>0.00</div>
 														</td>
 														<td>
-															<h6 class="text-secondary font-size-sm mb-0">22.46005</h6>
+															<h6 class="text-secondary font-size-sm mb-0">0</h6>
 														</td>
 													</tr>
 												</tbody>
