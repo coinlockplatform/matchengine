@@ -1,0 +1,41 @@
+{
+	"status": "success",
+	"data": {
+		"assets": [{
+				"name": "bitcoin",
+				"symbol": "btc",
+				"holdings": 2.334234,
+				"usd_value": 2845.10,
+				"pending": -0.4534
+			},
+			{
+				"name": "lockcoin",
+				"symbol": "lock",
+				"holdings": 124332.0346725,
+				"usd_value": 9054.50,
+				"pending": 0
+			},
+			{
+				"name": "litecoin",
+				"symbol": "ltc",
+				"holdings": 0,
+				"usd_value": 0,
+				"pending": 0
+			},
+			{
+				"name": "ripple",
+				"symbol": "xrp",
+				"holdings": 0,
+				"usd_value": 0.00,
+				"pending": 0
+			},
+			{
+				"name": "ethereum",
+				"symbol": "eth",
+				"holdings": 0,
+				"usd_value": 0.00,
+				"pending": 0
+			}
+		]
+	}
+}

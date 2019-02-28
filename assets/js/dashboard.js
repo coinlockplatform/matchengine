@@ -2,11 +2,36 @@
 
 
 function updateBalances(){
+   var post_url = "/test-balances.json";
+   $.ajax({
+      url: post_url,
+      timeout: 5000,
+      data: form_data,
+      method: "POST",
+      dataType: 'json',
+      success: function(json) {
+         if(json.status == "success" && json.data){
+               swal({
+                  title: 'Test json Balances doc recieved',
+                  text: 'just a default msg',
+                  type: 'success'
+               });
+               
+               
 
+         }else{
+               swal({
+                  title: 'Oops!',
+                  text: json.message,
+                  type: 'error'
+               });
+         }
+      }
+   });
 
 }
-
-setInterval(function() { updateBalances() }, 150000); 
+updateBalances();
+setInterval(function() { updateBalances() }, 100000); 
 
 
 $(window).on('load', function(){ 
