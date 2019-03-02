@@ -13,7 +13,7 @@
 <script src="/global_assets/js/plugins/notifications/jgrowl.min.js"></script>
 <script src="/global_assets/js/plugins/notifications/noty.min.js"></script>
 <script src="/global_assets/js/plugins/visualization/echarts/echarts.min.js"></script>
-
+<script src="/global_assets/js/plugins/notifications/sweet_alert.min.js"></script>
 
 <script src="/assets/js/dashboard.js"></script>
 
@@ -60,7 +60,7 @@
 										<div class="card-header bg-white  header-elements-inline">
 											<h6 class="card-title">Balances</h6>
 											<div class="header-elements">
-												<span class="font-weight-bold text-primary-600 ml-2">$76,878.59</span>
+												<span class="font-weight-bold text-primary-600 ml-2" id='total_balance'>$76,878.59</span>
 												<div class="list-icons ml-3">
 													<a class="list-icons-item" data-action="collapse"></a>
 													<a class="list-icons-item" data-action="reload"></a>
@@ -78,132 +78,7 @@
 														<th>Pending +/-</th>
 													</tr>
 												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div class="mr-3">
-																	<a href="#">
-																		<img src="/global_assets/images/crypto-logos/bitcoin.png" class="rounded-circle" width="32" height="32" alt="">
-																	</a>
-																</div>
-																<div>
-																	<a href="#" class="text-default font-weight-semibold">Bitcoin</a>
-																	<div class="text-muted font-size-sm">
-																		BTC
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>
-															<span class="text-muted font-size-sm">12.24048303</span>
-															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>63,679.90</div>
-														</td>
-														<td>
-															<h6 class="text-secondary font-size-sm mb-0">1.92693450</h6>
-														</td>
-													</tr>
-
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div class="mr-3">
-																	<a href="#">
-																		<img src="/global_assets/images/crypto-logos/coinlock.png" class="rounded-circle" width="32" height="32" alt="">
-																	</a>
-																</div>
-																<div>
-																	<a href="#" class="text-default font-weight-semibold">Lockcoin</a>
-																	<div class="text-muted font-size-sm">
-																		LOCK
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>
-															<span class="text-muted font-size-sm">124,332.0346725</span>
-															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>9,054.50</div>
-														</td>
-														<td>
-															<h6 class="text-secondary font-size-sm mb-0">0</h6>
-														</td>
-													</tr>
-
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div class="mr-3">
-																	<a href="#">
-																		<img src="/global_assets/images/crypto-logos/ripple.png" class="rounded-circle" width="32" height="32" alt="">
-																	</a>
-																</div>
-																<div>
-																	<a href="#" class="text-default font-weight-semibold">Ripple</a>
-																	<div class="text-muted font-size-sm">
-																		XRP
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>
-															<span class="text-muted font-size-sm">0</span>
-															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>0.00</div>
-														</td>
-														<td>
-															<h6 class="text-secondary font-size-sm mb-0">0</h6>
-														</td>
-													</tr>
-
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div class="mr-3">
-																	<a href="#">
-																		<img src="/global_assets/images/crypto-logos/litecoin.png" class="rounded-circle" width="32" height="32" alt="">
-																	</a>
-																</div>
-																<div>
-																	<a href="#" class="text-default font-weight-semibold">Litecoin</a>
-																	<div class="text-muted font-size-sm">
-																		LTC
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>
-															<span class="text-default font-size-sm">0</span>
-															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>00.00</div>
-														</td>
-														<td>
-															<h6 class="text-secondary font-size-sm mb-0">0</h6>
-														</td>
-													</tr>
-
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div class="mr-2">
-																	<a href="#">
-																		<img src="/global_assets/images/crypto-logos/ethereum.png" class="rounded-circle" width="32" height="32" alt="">
-																	</a>
-																</div>
-																<div>
-																	<a href="#" class="text-default font-weight-semibold">Ethereum</a>
-																	<div class="text-muted font-size-sm">
-																		ETH
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>
-															<span class="text-muted font-size-sm">0</span>
-															<div class="text-muted font-size-sm"><i class="icon-coin-dollar font-size-sm mr-1"></i>0.00</div>
-														</td>
-														<td>
-															<h6 class="text-secondary font-size-sm mb-0">0</h6>
-														</td>
-													</tr>
-												</tbody>
+												<tbody id='balances_tbl'></tbody>
 											</table>
 										</div>
 									</div>
@@ -213,19 +88,6 @@
 
 
 
-										<%-- <div class="row">
-											<div class="col-3">
-												<input type="text" class="form-control" placeholder=".col-3">
-											</div>
-
-											<div class="col-4">
-												<input type="text" class="form-control" placeholder=".col-4">
-											</div>
-
-											<div class="col-5">
-												<input type="text" class="form-control" placeholder=".col-5">
-											</div>
-										</div> --%>
 							<!-- 
 								################################################
 								TRADE CARD 
@@ -245,7 +107,7 @@
 											</div>
 										</div>
 										<div class="card-body">
-											<form id='trade-form' class="form-group d-flex row">														
+											<form id='position_form' class="form-group d-flex row">														
 												<div class="col-lg-6 col-sm-12 col-md-12">
 													<select data-placeholder="Select an asset" id='asset_selection' name='asset' class="form-control select-icons" data-fouc>
 														<optgroup label="Select an asset">
@@ -257,15 +119,15 @@
 													</select>
 												</div>
 												<div class="col-lg-6 col-sm-12 col-md-12 text-center">
-													<input class='form-control col-form-label' id='trade_amount' name='amount' type='text' placeholder='Amount    i.e 2.3084'>
+													<input class='form-control col-form-label' id='position_amount' name='amount' type='text' placeholder='Amount    i.e 2.3084'>
 												</div>
 												<div class="row d-flex mt-2 ml-1">
 													<div class='col-md-7 col-sm-12'>
-														<input type="checkbox" id='trade_selector' name="trade-selector" data-on-color="success" data-off-color="primary" data-on-text="Give 3X Protection" data-off-text="Get Protection" class="form-check-input-switch" checked="checked" checked>
+														<input type="checkbox" id='position_selector' value="" name="position_selector" data-on-color="success" data-off-color="primary" data-on-text="Give 3X Protection" data-off-text="Get Protection" class="form-check-input-switch" checked="checked" checked>
 													</div>
 													<div class='col-md-5 col-sm-12 wmin-200'>
 														<div class='ml-2 mt-2 d-flex'>
-															<input type="checkbox" id='auto_trade' name='auto-trade' class="form-check-input-styled-primary d-inline" data-fouc> 
+															<input type="checkbox" id='auto_position' name='auto_position' class="form-check-input-styled-primary d-inline" data-fouc> 
 															<span class='ml-1'>Auto Trade</span>
 														</div>
 													</div>
@@ -273,9 +135,9 @@
 												<%-- <div class='col-lg-12 amountDesc mt-2' id='amountDesc'>
 													Grow your BTC faster by providing peer to peer 3X price protection of Bitcoin by using our automated match engine.
 												</div> --%>
-												<div id='trade_e' class='text-danger ml-2'></div>
+												<div id='position_e' class='text-danger ml-2'></div>
 												<div class="col-lg-12 text-center mt-2">
-														<button id='tradebtn' type="submit" class="btn btn-outline-primary">Place 3X Protection Order</button>
+														<button id='positionbtn' type="submit" class="btn btn-outline-primary">Place 3X Protection Order</button>
 												</div>
 											</form>
 											<div class="media-body">
@@ -399,7 +261,35 @@
 										</div>
 										<div class="card-body">
 											<div class="list-feed border-0">
+												<div class="list-feed-item">
+													<div class="text-muted">Jan 12, 12:47</div>
+													<code>74.34.234.67</code> Miami, FL
+												</div>
 
+												<div class="list-feed-item">
+													<div class="text-muted">Jan 11, 10:25</div>
+													<code>74.34.234.67</code> St Louis, MO
+												</div>
+
+												<div class="list-feed-item">
+													<div class="text-muted">Jan 10, 09:37</div>
+													<code>34.201.45.34</code> St Louis, MO
+												</div>
+
+												<div class="list-feed-item">
+													<div class="text-muted">Jan 9, 08:28</div>
+													<code>167.142.225.5</code> Des Moines, IA
+												</div>
+
+												<div class="list-feed-item">
+													<div class="text-muted">Jan 8, 07:58</div>
+													<code>223.187.3.23</code> San Francisco, CA
+												</div>
+
+												<div class="list-feed-item">
+													<div class="text-muted">Jan 7, 06:32</div>
+													<code>223.187.3.23</code> San Francisco, CA
+												</div>
 											</div>
 										</div>
 									</div>
@@ -410,22 +300,22 @@
 								<div class="col tradingview-widget-container card-body tradingview-widget-container tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BITSTAMP-BTCUSD/" rel="noopener" target="_blank"></div>
 								<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 								<script type="text/javascript">
-									new TradingView.widget(
-									{
-										"autosize": true,
-										"symbol": "BITSTAMP:BTCUSD",
-										"timezone": "Etc/UTC",
-										"theme": "Light",
-										"style": "1",
-										"locale": "en",
-										"toolbar_bg": "#f1f3f6",
-										"enable_publishing": false,
-										"hide_top_toolbar": true,
-										"range": "1m",
-										"save_image": false,
-										"container_id": "tradingview_b3e67"
-									}
-									);
+									// new TradingView.widget(
+									// {
+									// 	"autosize": true,
+									// 	"symbol": "BITSTAMP:BTCUSD",
+									// 	"timezone": "Etc/UTC",
+									// 	"theme": "Light",
+									// 	"style": "1",
+									// 	"locale": "en",
+									// 	"toolbar_bg": "#f1f3f6",
+									// 	"enable_publishing": false,
+									// 	"hide_top_toolbar": true,
+									// 	"range": "1m",
+									// 	"save_image": false,
+									// 	"container_id": "tradingview_b3e67"
+									// }
+									// );
 								</script>
 						</div>
 

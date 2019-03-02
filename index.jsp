@@ -13,11 +13,92 @@
 <script src="/assets/js/reg_login_forgot.js"></script>
 <script src="/global_assets/js/demo_pages/form_checkboxes_radios.js"></script>
 <script src="/global_assets/js/plugins/notifications/sweet_alert.min.js"></script>
+<script>
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
 
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
+var bi = Math.floor(Math.random() * 23) + 1;
+//var bi = parseInt(getUrlParameter('bg'));
+switch(bi){
+    case 16: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
+    case 12: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
+    case 14: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
+    case 9: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
+    case 2: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 6: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityGrey'; cardtxt='#000'; linktxt='#234DD1'; break;
+    case 22: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
+    case 3: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 17: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
+
+    case 1: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#000'; linktxt='#000'; break;
+    case 11: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 13: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 15: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 18: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 19: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 7: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 4: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#234DD1'; break;
+    case 5: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#234DD1'; break;
+    case 8: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 10: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 20: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 24: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 21: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+    case 23: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+
+    default: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
+}
+console.log(bi);
+$(document).ready(function(){
+    $("#page_content").css("background-image", "url('/global_assets/images/backgrounds/"+bi+".jpg')");
+    $("#front_logo").attr("src","/global_assets/images/"+logo);
+    //#login-form-cont, #register-form-cont, #forgotpass-form-cont
+    $("#login-form-cont").addClass(opacity);
+    $("#register-form-cont").addClass(opacity);
+    $("#forgotpass-form-cont").addClass(opacity);
+    $(".card-title").css("color",cardtxt);
+    $("a").css("color",linktxt);
+    $("a").css("font-weight",'bold');
+
+});
+</script>
+<style>
+#page_content{
+    background-size: cover; 
+    -ms-background-size: cover; 
+    -o-background-size: cover; 
+    -moz-background-size: cover;
+    -webkit-background-size: cover;   
+}
+.opacityBlack{
+    background: rgba(140, 140, 140, 0.6);
+}
+.opacityWhite{
+    background: rgba(255, 255, 255, 0.6);
+}
+.opacityGrey{
+    background: rgba(200, 200, 200, 0.6);
+}
+input{
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    background: rgba(255, 255, 255, 0.4) !important;
+}
+</style>
 
 
 	<!-- Page content -->
-	<div class="page-content pt-0">
+	<div id='page_content' class="page-content pt-0">
 		<!-- Main content -->
 		<div class="content-wrapper">
 			<!-- Content area -->
@@ -28,7 +109,7 @@
 
                         <div class="row justify-content-md-center">
                             <div class="col-12 text-center mb-4">
-                                <img src='/global_assets/images/matchengine-logo-big.png' width='480' height='165' alt='matchengine.io'>
+                                <img id='front_logo' width='480' height='165' alt='matchengine.io'>
                             </div>
                             <div class="col col-lg-2"></div>
                                     
@@ -44,7 +125,7 @@
                                 </div>
                                 <div class="card-body">
                                     <form id='login-form'>
-                                        <input type="email" class="email" id='login_email' name='email' placeholder="EMAIL" required title='you need to do this'><br /><div id='login_email_e' class='errormsg'></div>
+                                        <input type="email" class="email" style='' id='login_email' name='email' placeholder="EMAIL" required title='you need to do this'><br /><div id='login_email_e' class='errormsg'></div>
                                         <input type="password" class="pwd" id='login_password' name='password' placeholder="PASSWORD" required><br /><div id='login_password_e' class='errormsg'></div>
                                         <br/>
                                         <button class="signin" id="login-form-submit" type='submit' value='login' name="submit"><span> login </span></button>
@@ -74,11 +155,11 @@
                                 </div>
                                 <div class="card-body">
                                     <form id='register-form'>
-                                        <input value='test@test.com' type="email" class="email" id='reg_email' name='email' placeholder="EMAIL"><br/><div id='reg_email_e' class='errormsg'></div>
-                                        <input value='bob' type="text" class="pwd" id='reg_first_name' name='fname' placeholder="FIRST NAME"><br/><div id='reg_first_name_e' class='errormsg'></div>
-                                        <input value='test' type="text" class="pwd" id='reg_last_name' name='lname' placeholder="LAST NAME"><br/><div id='reg_last_name_e' class='errormsg'></div>
-                                        <input value='qqQQ11!!' type="password" class="pwd" id='reg_password' name='password' placeholder="PASSWORD"><br/><div id='reg_password_e' class='errormsg'></div>
-                                        <input value='qqQQ11!!' type="password" class="pwd" id='reg_password_confirm' name='rpassword_confirm' placeholder="CONFIRM"><br /><div id='reg_password_confirm_e' class='errormsg'></div>
+                                        <input type="email" class="email" id='reg_email' name='email' placeholder="EMAIL"><br/><div id='reg_email_e' class='errormsg'></div>
+                                        <input type="text" class="pwd" id='reg_first_name' name='fname' placeholder="FIRST NAME"><br/><div id='reg_first_name_e' class='errormsg'></div>
+                                        <input type="text" class="pwd" id='reg_last_name' name='lname' placeholder="LAST NAME"><br/><div id='reg_last_name_e' class='errormsg'></div>
+                                        <input type="password" class="pwd" id='reg_password' name='password' placeholder="PASSWORD"><br/><div id='reg_password_e' class='errormsg'></div>
+                                        <input type="password" class="pwd" id='reg_password_confirm' name='rpassword_confirm' placeholder="CONFIRM"><br /><div id='reg_password_confirm_e' class='errormsg'></div>
                                         
                                         
                                             <div class="form-check ml-4">

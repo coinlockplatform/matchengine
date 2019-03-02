@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script>
+  
+
+var ciResponseText = document.getElementById('ciResponseText');
+var obj = JSON.parse(http.response);
+ciResponseText.innerHTML = JSON.stringify(obj, undefined, 2); 
+
+</script>
+</head>
+<body>
+
+<pre id="ciResponseText">Output will de displayed here.</pre>  
+</body>
+</html>

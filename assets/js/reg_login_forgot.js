@@ -14,7 +14,7 @@ $(document).ready(function(){
          //var post_url = $("#login-form").attr("action"); //get form action url
          var post_url = "/api/v1/auth";
          var form_data = $("#login-form").serializeArray();
-         form_data.push({name: "action", value: 'login'});
+         form_data.push({name: "type", value: 'login'});
          $.ajax({
             url: post_url,
             timeout: 5000,

@@ -407,7 +407,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>RunTimer</servlet-name>
-    <url-pattern>/RunTimer</url-pattern>
+    <url-pattern>/api/v1/runtimer</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -417,7 +417,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>StopTimer</servlet-name>
-    <url-pattern>/StopTimer</url-pattern>
+    <url-pattern>/api/v1/stoptimer</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -448,5 +448,15 @@
   <servlet-mapping>
     <servlet-name>BuySellLocck</servlet-name>
     <url-pattern>/api/v1/orders</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Quotes</display-name>
+    <servlet-name>Quotes</servlet-name>
+    <servlet-class>Quotes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Quotes</servlet-name>
+    <url-pattern>/api/v1/quotes</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -11,13 +11,14 @@
 <body>
 <% 
 String userName = request.getParameter("username");
+String email = request.getParameter("email");
 String password = request.getParameter("password");
-String submit = request.getParameter("submit");
+//String submit = request.getParameter("submit");
 
   final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
   final String DB_URL="jdbc:mysql://3.16.62.130/cl";
       //int age = rs.getInt("age");
-      String email=null ;
+//      String email=null ;
       String last=null ;
       double bitCoin =0;
 	    double lotCoin =0 ;
@@ -61,6 +62,7 @@ String submit = request.getParameter("submit");
 	  	        	session.invalidate();
 	   	    	     session = request.getSession();
 	  	    	     session.setAttribute("username", userName);
+	  	    	     session.setAttribute("email", userName);
 	  	    	     session.setAttribute("password", password);
 	  	    	     session.setAttribute("auth", "1");
 	   	    	     status = rs.getBoolean("approved");
