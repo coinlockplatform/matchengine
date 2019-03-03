@@ -7,72 +7,12 @@
         response.sendRedirect(request.getContextPath() + "/dashboard.jsp");
         return;
     }
-%>
+%> 
 <jsp:include page="/includes/header.jsp" />
 <link href="/css/reg_login_forgot.css" rel="stylesheet" type="text/css">
 <script src="/assets/js/reg_login_forgot.js"></script>
 <script src="/global_assets/js/demo_pages/form_checkboxes_radios.js"></script>
 <script src="/global_assets/js/plugins/notifications/sweet_alert.min.js"></script>
-<script>
-var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-
-        if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-        }
-    }
-};
-var bi = Math.floor(Math.random() * 23) + 1;
-//var bi = parseInt(getUrlParameter('bg'));
-switch(bi){
-    case 16: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
-    case 12: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
-    case 14: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
-    case 9: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
-    case 2: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 6: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityGrey'; cardtxt='#000'; linktxt='#234DD1'; break;
-    case 22: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
-    case 3: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 17: var logo = 'matchengine-black-logo.png'; var opacity = 'opacityBlack'; cardtxt='#000'; linktxt='#000'; break;
-
-    case 1: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#000'; linktxt='#000'; break;
-    case 11: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 13: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 15: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 18: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 19: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 7: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 4: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#234DD1'; break;
-    case 5: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#234DD1'; break;
-    case 8: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 10: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 20: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 24: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 21: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-    case 23: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-
-    default: var logo = 'matchengine-white-logo.png'; var opacity = 'opacityWhite'; cardtxt='#fff'; linktxt='#fff'; break;
-}
-console.log(bi);
-$(document).ready(function(){
-    $("#page_content").css("background-image", "url('/global_assets/images/backgrounds/"+bi+".jpg')");
-    $("#front_logo").attr("src","/global_assets/images/"+logo);
-    //#login-form-cont, #register-form-cont, #forgotpass-form-cont
-    $("#login-form-cont").addClass(opacity);
-    $("#register-form-cont").addClass(opacity);
-    $("#forgotpass-form-cont").addClass(opacity);
-    $(".card-title").css("color",cardtxt);
-    $("a").css("color",linktxt);
-    $("a").css("font-weight",'bold');
-
-});
-</script>
 <style>
 #page_content{
     background-size: cover; 
@@ -80,12 +20,37 @@ $(document).ready(function(){
     -o-background-size: cover; 
     -moz-background-size: cover;
     -webkit-background-size: cover;   
+    background-position: 50% 50%;
+}
+#front_logo{
+    padding:8px;
+}
+.bottom-align-text a{
+    text-shadow: 1px 1px #444;
+}
+.bottom-align-text{
+    margin:3px;
+    padding:5px;
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+    text-align:right;
+    /*z-index:-1;*/
 }
 .opacityBlack{
-    background: rgba(140, 140, 140, 0.6);
+    background: rgba(120, 120, 120, 0.6);
+}
+.opacityBlack-dark{
+    background: rgba(0, 0, 0, 0.4);
+}
+.opacityBlack-darkest{
+    background: rgba(0, 0, 0, 0.7);
 }
 .opacityWhite{
     background: rgba(255, 255, 255, 0.6);
+}
+.opacitySlight{
+    background: rgba(255, 255, 255, 0.2);
 }
 .opacityGrey{
     background: rgba(200, 200, 200, 0.6);
@@ -109,7 +74,7 @@ input{
 
                         <div class="row justify-content-md-center">
                             <div class="col-12 text-center mb-4">
-                                <img id='front_logo' width='480' height='165' alt='matchengine.io'>
+                                <img id='front_logo' src='/global_assets/images/logos/logo-black.png' width='480' height='80' alt='matchengine.io'>
                             </div>
                             <div class="col col-lg-2"></div>
                                     
@@ -261,22 +226,12 @@ input{
                                     <a href="#" onclick="switchRegLogin('register');"  class="breadcrumb-item">Don't have an Account</a>
 								</div>
                             </div>
-
-
-
                             <div class="col col-lg-2"></div>
                         </div>
-
-
-
-
-
-
-
-
-
 					</div>
 				</div>
+
+                <div class="bottom-align-text"></div>
 				<!-- /dashboard content -->
 			</div>
 			<!-- /content area -->

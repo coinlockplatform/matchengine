@@ -1,8 +1,6 @@
 
 $(document).ready(function(){
    $('.navbar').hide(); // Hide the navigation on the login screen
-
-
    /*----------------------------------------------------
             ###############################
                      LOGIN FORM
@@ -299,3 +297,73 @@ function switchRegLogin(screen){
                         break;
    }
 }
+
+
+$(document).ready(function(){
+   var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = window.location.search.substring(1),
+         sURLVariables = sPageURL.split('&'),
+         sParameterName,
+         i;
+   
+      for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+   
+            if (sParameterName[0] === sParam) {
+               return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            }
+      }
+      return 0;
+   };
+
+   var previous = parseInt(getUrlParameter('previous')); // previous is the number of the previous image. Used when user wants to see a new image and we dont want to show them the same one again
+   var bi = parseInt(getUrlParameter('bg'));
+   if(!bi){
+      while(bi == previous || bi==0){ // If we are viewing another bg image, dont show the same one they already were looking at which will be sent as previous get variable
+          var bi = Math.floor(Math.random() * 23) + 1;
+      }
+   }
+   console.log('bg image '+bi);
+   var infobg=''; 
+   switch(bi){
+      case 1: var logo='logo-white-strokeblack.png'; var opacity='opacityBlack-darkest'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infohtml='Monaco'; break;
+      case 2: var logo='logo-white.png'; var opacity='opacitySlight'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infohtml='Cappadocia, Turkey'; break;
+      case 3: var logo='logo-black.png'; var opacity='opacitySlight'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infohtml='California, USA'; break;
+      case 4: var logo='logo-white.png'; var opacity='opacityWhite'; var cardtxt='#fff'; var linktxt='#234DD1'; var infotxt='#fff'; var infobg='rgba(0, 0, 0, 0.4)'; var infohtml='Masaya, Nicaragua'; break;
+      case 5: var logo='logo-white.png'; var opacity='opacityWhite'; var cardtxt='#fff'; var linktxt='#234DD1'; var infotxt='#fff'; var infohtml='Hong Kong'; break;
+      case 6: var logo='logo-black.png'; var opacity='opacityGrey'; var cardtxt='#000'; var linktxt='#234DD1'; var infotxt='#fff'; var infohtml='California, USA'; break;
+      case 7: var logo='logo-white.png'; var opacity='opacityBlack-dark'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infobg='rgba(0, 0, 0, 0.4)'; var infohtml='Egypt'; break;
+      case 8: var logo='logo-white.png'; var opacity='opacitySlight'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infohtml='London, England'; break;
+      case 9: var logo='logo-black.png'; var opacity='opacitySlight'; var cardtxt='#000'; var linktxt='#fff'; var infotxt='#fff'; var infobg='rgba(0, 0, 0, 0.5)'; var infohtml='Oregon, USA'; break;
+      case 10: var logo='logo-white.png'; var opacity='opacityWhite'; var cardtxt='#000'; var linktxt='#000'; var infotxt='#fff'; var infobg='rgba(0, 0, 0, 0.5)'; var infohtml='Sorrento, Italy'; break;
+      case 11: var logo='logo-white.png'; var opacity='opacityWhite'; var cardtxt='#000'; var linktxt='#234DD1'; var infotxt='#fff'; var infohtml='Chicago, USA'; break;
+      case 12: var logo='logo-slateblue.png'; var opacity='opacityWhite'; var cardtxt='#33558C'; var linktxt='#234DD1'; var infotxt='#fff'; var infobg='rgba(0, 0, 0, 0.3)'; var infohtml='HCMC, Vietnam'; break;
+      case 13: var logo='logo-white.png'; var opacity='opacityWhite'; var cardtxt='#fff'; var linktxt='#000'; var infotxt='#fff'; var infohtml='Dubrovnik, Croatia'; break;
+      case 14: var logo='logo-white-strokeblack.png'; var opacity='opacitySlight'; var cardtxt='#000'; var linktxt='#fff'; var infotxt='#fff'; var infohtml='Palawan, Philippines'; break;
+      case 15: var logo='logo-white-strokeblack.png'; var opacity='opacityBlack-dark'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infobg='rgba(0, 0, 0, 0.3)'; var infohtml='Palawan, Philippines'; break;
+      case 16: var logo='logo-black-strokewhite.png'; var opacity='opacityBlack'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infobg='rgba(0, 0, 0, 0.5)'; var infohtml='Ushuaia, Argentina'; break;
+      case 17: var logo='logo-black-strokewhite.png'; var opacity='opacityWhite'; var cardtxt='#000'; var linktxt='#000'; var infotxt='#fff'; var infohtml='Nepal'; break;
+      case 18: var logo='logo-black.png'; var opacity='opacitySlight'; var cardtxt='#fff'; var linktxt='#234DD1'; var infotxt='#fff'; var infohtml='Nepal'; break;
+      case 19: var logo='logo-white.png'; var opacity='opacityBlack-dark'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infohtml='New York, USA'; break;
+      case 21: var logo='logo-white.png'; var opacity='opacitySlight'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infohtml='Easter Island, Chile'; break;
+      case 20: var logo='logo-white-strokeblack.png'; var opacity='opacityWhite'; var cardtxt='#000'; var linktxt='#234DD1'; var infotxt='#fff'; var infohtml='Paris, France'; break;
+      case 22: var logo='logo-black.png'; var opacity='opacityBlack-dark'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infobg='rgba(0, 0, 0, 0.3)'; var infohtml='Kentucky, USA'; break;
+      case 23: var logo='logo-white.png'; var opacity='opacityBlack-dark'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infohtml='Easter Island, Chile'; break;
+      case 24: var logo='logo-black-strokewhite.png'; var opacity='opacityBlack-dark'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infohtml='Wyoming, USA'; break;
+      default: var logo='logo-white.png'; var opacity='opacityWhite'; var cardtxt='#fff'; var linktxt='#fff'; var infotxt='#fff'; var infobg='rgba(0, 0, 0, 0.5)'; var infohtml='many countries'; break;
+   }
+
+   $("#page_content").css("background-image", "url('https://www.brentrussell.com/images/matchengine/"+bi+".jpg')");
+   $("#front_logo").attr("src","/global_assets/images/logos/"+logo);
+   $("#login-form-cont, #register-form-cont, #forgotpass-form-cont").addClass(opacity);
+   $(".card-title, .card-body").css("color",cardtxt);
+   //$(".card-title").css("textShaddow","9px 9px #f00");
+   $(".card-title").css('textShadow','#555 2px 2px 1px');
+   $(".card-title").css('fontSize','1.4em');
+
+   $("a").css("color",linktxt);
+   $("a").css("font-weight",'normal');
+   $(".bottom-align-text, .bottom-align-text a").css("color",infotxt);
+   $(".bottom-align-text").css("background-color",infobg);
+   $(".bottom-align-text").html('We have users as far away as '+infohtml+'!<br /><a href=\'/?previous='+bi+'\'>See another</a>');
+});

@@ -8,21 +8,18 @@
 	}
 %>
 <jsp:include page="/includes/header.jsp" />
+
 <script src="/global_assets/js/demo_pages/form_checkboxes_radios.js"></script>
-<%-- <script src="/global_assets/js/plugins/notifications/pnotify.min.js"></script> --%>
 <script src="/global_assets/js/plugins/notifications/jgrowl.min.js"></script>
 <script src="/global_assets/js/plugins/notifications/noty.min.js"></script>
 <script src="/global_assets/js/plugins/visualization/echarts/echarts.min.js"></script>
 <script src="/global_assets/js/plugins/notifications/sweet_alert.min.js"></script>
-
 <script src="/assets/js/dashboard.js"></script>
 
 <jsp:include page="/includes/nav/nav_loggedin.jsp" />
 	<!-- Page header -->
 	<div class="page-header mb-0">
 		<div class="page-header-content header-elements-md-inline">
-
-
 			<div class="header-elements d-none py-0 mb-3 mb-md-0">
 				<div class="breadcrumb">
 					<a href="/" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
@@ -42,6 +39,11 @@
 				<!-- Dashboard content -->
 				<div class="row">
 					<div class="col-xl-12 mt-0">
+
+
+
+
+
 
 
 
@@ -260,32 +262,27 @@
 											</div>
 										</div>
 										<div class="card-body">
-											<div class="list-feed border-0">
+											<div class="list-feed border-0"> 
 												<div class="list-feed-item">
 													<div class="text-muted">Jan 12, 12:47</div>
 													<code>74.34.234.67</code> Miami, FL
 												</div>
-
 												<div class="list-feed-item">
 													<div class="text-muted">Jan 11, 10:25</div>
 													<code>74.34.234.67</code> St Louis, MO
 												</div>
-
 												<div class="list-feed-item">
 													<div class="text-muted">Jan 10, 09:37</div>
 													<code>34.201.45.34</code> St Louis, MO
 												</div>
-
 												<div class="list-feed-item">
 													<div class="text-muted">Jan 9, 08:28</div>
 													<code>167.142.225.5</code> Des Moines, IA
 												</div>
-
 												<div class="list-feed-item">
 													<div class="text-muted">Jan 8, 07:58</div>
 													<code>223.187.3.23</code> San Francisco, CA
 												</div>
-
 												<div class="list-feed-item">
 													<div class="text-muted">Jan 7, 06:32</div>
 													<code>223.187.3.23</code> San Francisco, CA
@@ -293,9 +290,11 @@
 											</div>
 										</div>
 									</div>
-								</div><!-- END SECOND ROW -->
+								</div>	
+							</div><!-- END SECOND ROW -->
 
-	
+
+
 						<div class="row">
 								<div class="col tradingview-widget-container card-body tradingview-widget-container tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BITSTAMP-BTCUSD/" rel="noopener" target="_blank"></div>
 								<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
@@ -321,6 +320,12 @@
 
 
 
+
+
+
+
+
+
 					</div>
 				</div>
 				<!-- /dashboard content -->
@@ -331,4 +336,7 @@
 		<!-- /main content -->
 	</div>
 	<!-- /page content -->
+
+	
+</div><!-- Couldn't find why but this div prevents the footer from acting up. -->
 <jsp:include page="/includes/footer.jsp" />

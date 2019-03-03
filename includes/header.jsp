@@ -9,12 +9,9 @@
 	<!-- Global stylesheets -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
 	<link href="/global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
-
     <link href="/global_assets/css/icons/cryptofont/css/cryptofont.css" rel="stylesheet" type="text/css">
-	
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
- 
-	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/bootstrap_limitless.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/layout.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/components.css" rel="stylesheet" type="text/css">
@@ -66,26 +63,9 @@
             </button>
         </div>
         <div class="collapse navbar-collapse" id="navbar-mobile">
-            <span class="badge bg-success-400 badge-pill ml-md-3 mr-2">All online</span>
+            <span class="badge bg-success-400 badge-pill ml-md-3 mr-2">All Systems Operational</span>
             <span class="m-2 mr-md-auto">Home</span>
             <span class="mr-5">Support</span>
-            <!-- <ul class="navbar-nav">
-                <li class="nav-item dropdown dropdown-user">
-                    <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
-                        <img src="/global_assets/images/placeholders/placeholder.jpg" class="rounded-circle mr-2" height="34" alt="">
-                        <span>Victoria</span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
-                        <a href="#" class="dropdown-item"><i class="icon-coins"></i> My balance</a>
-                        <a href="#" class="dropdown-item"><i class="icon-comment-discussion"></i> Messages <span class="badge badge-pill bg-blue ml-auto">58</span></a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item"><i class="icon-cog5"></i> Account settings</a>
-                        <a href="#" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
-                    </div>
-                </li>
-            </ul> -->
         </div>
     </div>
     <!-- /main navbar -->
